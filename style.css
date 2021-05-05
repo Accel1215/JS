@@ -1,0 +1,21 @@
+.block1 {
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    left:400px;
+    right: 400px;
+    top: 200px;
+}
+.block2 {
+    height: 100px;
+    width: 50px;
+    position: fixed;
+    left: 500px;
+    right: 500px;
+    top: 200px;
+}
+.result {
+    position: fixed;
+    left: 400px;
+    top: 150px;
+}

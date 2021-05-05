@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form name="Calculator">
-        <input type="button" name="One" value="1"></input>
-        <input type="button" name="Two" value="2"></input>
-        <input type="button" name="Three" value="3"></input>
-        <input type="button" name="Four" value="4"></input>
-        <input type="button" name="Five" value="5"></input>
-        <input type="button" name="Six" value="6"></input>
-        <input type="button" name="Seven" value="7"></input>
-        <input type="button" name="Eight" value="8"></input>
-        <input type="button" name="Nine" value="9"></input>
-        <input type="button" name="Zero" value="0"></input>
+        <div class="block1">
+            <input type="button" name="One" value="1" ></input>
+            <input type="button" name="Two" value="2"></input>
+            <input type="button" name="Three" value="3"></input>
+            <input type="button" name="Four" value="4"></input>
+            <input type="button" name="Five" value="5"></input>
+            <input type="button" name="Six" value="6"></input>
+            <input type="button" name="Seven" value="7"></input>
+            <input type="button" name="Eight" value="8"></input>
+            <input type="button" name="Nine" value="9"></input>
+            <input type="button" name="Zero" value="0"></input>
+        </div>
+        
+        <div class="block2">
+            <input type="button" name="Plus" value="+"></input>
+            <input type="button" name="Minus" value="-"></input>
+            <input type="button" name="Multi" value="*"></input>
+            <input type="button" name="Div" value="/"></input>
+            <input type="button" name="Exp" value="**"></input>
+            <input type="button" name="Div2" value="%"></input>
+            <input type="button" name="Equal" value="="></input>
+            <input type="button" name="Clear" value="c"></input>
+        </div>
 
-        <input type="button" name="Plus" value="+"></input>
-        <input type="button" name="Minus" value="-"></input>
-        <input type="button" name="Multi" value="*"></input>
-        <input type="button" name="Div" value="/"></input>
-        <input type="button" name="Exp" value="**"></input>
-        <input type="button" name="Div2" value="%"></input>
-        <input type="button" name="Equal" value="="></input>
-
-        <input type="number" name="Number" value="number"></input>
-
-        <output name="result"></output>
+        <div class="result">
+            <output name="result"></output>
+        </div>
     </form>
     <script src="script.js"></script>
 </body>

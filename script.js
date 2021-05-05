@@ -1,92 +1,106 @@
 let form = document.forms.Calculator;
-
 let elements = form.elements
-
-let result = form.elements.result;
-
-let result2 = 0;
-
-let znak = '+';
+let label = form.elements.result;
+let firstNumber = 0;
+let secondNumber = "";
+let sign = '+';
 
 elements.One.onclick = () => {
-    result.value +=1;
+    label.value +=1;
+    secondNumber +=1;
 }
 elements.Two.onclick = () => {
-    result.value +=2;
+    label.value +=2;
+    secondNumber +=2;
 }
 elements.Three.onclick = () => {
-    result.value +=3;
+    label.value +=3;
+    secondNumber +=3;
 }
 elements.Four.onclick = () => {
-    result.value +=4;
+    label.value +=4;
+    secondNumber +=4;
 }
 elements.Five.onclick = () => {
-    result.value +=5;
+    label.value +=5;
+    secondNumber +=5;
 }
 elements.Six.onclick = () => {
-    result.value +=6;
+    label.value +=6;
+    secondNumber +=6;
 }
 elements.Seven.onclick = () => {
-    result.value +=7;
+    label.value +=7;
+    secondNumber +=7;
 }
 elements.Eight.onclick = () => {
-    result.value +=8;
+    label.value +=8;
+    secondNumber +=8;
 }
 elements.Nine.onclick = () => {
-    result.value +=9;
+    label.value +=9;
+    secondNumber +=9;
 }
 elements.Zero.onclick = () => {
-    result.value +=0;
-}
-elements.One.onclick = () => {
-    result.value +=1;
-}
-elements.One.onclick = () => {
-    result.value +=1;
-}
-
-function doZnak()
-{
-    if(znak == '+') {result2 += Number(result.value)}
-    else if (znak == '-') {result2 -= Number(result.value)}
-    else if (znak == '*') {result2 *= Number(result.value)}
-    else if (znak == '/') {result2 /= Number(result.value)}
-    else if (znak == '**') {result2 **= Number(result.value)}
-    else if (znak == '%') {result2 %= Number(result.value)}
+    label.value +=0;
+    secondNumber +=0;
 }
 
 elements.Plus.onclick = () => {
-    doZnak();
-    result.value ="";
-    znak = '+';
+    Calculate();
+    secondNumber = "";
+    sign = '+';
+    label.value = firstNumber  + " " + sign + " ";
 }
 elements.Minus.onclick = () => {
-    doZnak();
-    result.value ="";
-    znak = '-';
+    Calculate();
+    secondNumber = "";
+    sign = '-';
+    label.value = firstNumber  + " " + sign + " ";
 }
 elements.Multi.onclick = () => {
-    doZnak();
-    result.value ="";
-    znak = '*';
+    Calculate();
+    secondNumber = "";
+    sign = '*';
+    label.value = firstNumber  + " " + sign + " ";
 }
 elements.Div.onclick = () => {
-    doZnak();
-    result.value ="";
-    znak = '/';
+    Calculate();
+    secondNumber = "";
+    sign = '/';
+    label.value = firstNumber  + " " + sign + " ";
 }
 elements.Exp.onclick = () => {
-    doZnak();
-    result.value ="";
-    znak = '**';
+    Calculate();
+    secondNumber = "";
+    sign = '**';
+    label.value = firstNumber  + " " + sign + " ";
 }
 elements.Div2.onclick = () => {
-    doZnak();
-    result.value ="";
-    znak = '%';
+    Calculate();
+    secondNumber = "";
+    sign = '%';
+    label.value = firstNumber  + " " + sign + " ";
 }
 elements.Equal.onclick = () => {
-    doZnak();
-    result.value = result2;
-    znak = '+';
+    Calculate();
+    secondNumber = "";
+    sign = '=';
+    label.value = firstNumber;
+}
+elements.Clear.onclick = () => {
+    firstNumber = "";
+    secondNumber = "";
+    sign = '+';
+    label.value = "";
+}
+
+function Calculate()
+{
+    if(sign == '+') {firstNumber = Number(firstNumber) + Number(secondNumber)}
+    else if (sign == '-') {firstNumber -= Number(secondNumber)}
+    else if (sign == '*') {firstNumber *= Number(secondNumber)}
+    else if (sign == '/') {firstNumber /= Number(secondNumber)}
+    else if (sign == '**') {firstNumber **= Number(secondNumber)}
+    else if (sign == '%') {firstNumber %= Number(secondNumber)}
 }
