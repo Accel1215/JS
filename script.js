@@ -1,9 +1,11 @@
-let form = document.forms.Calculator;
+let form = document.forms.calculator;
 let elements = form.elements
 let label = form.elements.result;
+let viewHistory = form.elements.history;
 let firstNumber = 0;
 let secondNumber = "";
 let sign = '+';
+let history = [];
 
 elements.One.onclick = () => {
     label.value +=1;
@@ -89,7 +91,7 @@ elements.Equal.onclick = () => {
     label.value = firstNumber;
 }
 elements.Clear.onclick = () => {
-    firstNumber = "";
+    firstNumber = 0;
     secondNumber = "";
     sign = '+';
     label.value = "";
@@ -97,10 +99,27 @@ elements.Clear.onclick = () => {
 
 function Calculate()
 {
+    let string = firstNumber + " " + sign + " " + secondNumber + ' = '
+
     if(sign == '+') {firstNumber = Number(firstNumber) + Number(secondNumber)}
     else if (sign == '-') {firstNumber -= Number(secondNumber)}
     else if (sign == '*') {firstNumber *= Number(secondNumber)}
     else if (sign == '/') {firstNumber /= Number(secondNumber)}
     else if (sign == '**') {firstNumber **= Number(secondNumber)}
     else if (sign == '%') {firstNumber %= Number(secondNumber)}
+
+    string += firstNumber +' \n';
+    history.push(string);
+    viewHistory.value = '\n';
+
+    if(history.length > 10)
+    {
+        history.splice(0,1);
+    }
+
+    for(let i = 0; i < history.length; ++i)
+    {
+        viewHistory.value += history[i];
+    }
+
 }
